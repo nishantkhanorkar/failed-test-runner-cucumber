@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"@target/rerun.txt"},
 	glue = {"na.rerunCucumber.stepDef" },
-	dryRun = true
+	dryRun = false
 	)
 
 public class FailedTestRunner {
