@@ -1,0 +1,25 @@
+import hooks.ExtentReportListener;
+import io.cucumber.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
+
+public class Hooks {
+
+    private ExtentReportListener extentReportListener = new ExtentReportListener();
+
+    @Before
+    public void beforeScenario(Scenario scenario) {
+        extentReportListener.setUp(scenario);
+    }
+
+    @AfterStep
+    public void afterStep(Scenario scenario) {
+        extentReportListener.afterStep(scenario);
+    }
+
+    @After
+    public void afterScenario(Scenario scenario) {
+        extentReportListener.tearDown(scenario);
+    }
+}
